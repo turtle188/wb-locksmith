@@ -28,3 +28,43 @@ function toggleTextServices(button, x)
 		button.innerText = "Réduire";
 	}
 }
+
+/* Slider */
+
+var indexSlide = 1;
+
+var loading = document.querySelector("#loader.animationLoad");
+loading.addEventListener("animationiteration", function() {
+    displaySlide(indexSlide += 1);
+});
+var previousSlide = document.getElementById("previous");
+previousSlide.addEventListener("click", function() {
+    displaySlide(indexSlide -= 1);
+});
+var nextSlide = document.getElementById("next");
+nextSlide.addEventListener("click", function() {
+    displaySlide(indexSlide += 1);
+});
+
+function init_animationLoad() {
+	var loader = document.querySelector('#loader.animationLoad');
+	loader.classList.remove('animationLoad');
+	loader.offsetWidth;
+  	loader.classList.add("animationLoad");
+}
+
+function displaySlide(n)
+{
+  	init_animationLoad();
+	var x = document.querySelectorAll('#CTA li');
+	var imgBackground = document.getElementById('slides');
+	if (n > x.length)
+		indexSlide = 1;
+	if (n < 1)
+		indexSlide = x.length;
+	for (var i = 0; i < x.length; i++)
+		x[i].style.display = "none";
+	imgBackground.className = "slide" + indexSlide + " header-mobile";
+	x[indexSlide - 1].style.display = "block";
+}
+

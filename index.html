@@ -34,18 +34,45 @@
 				</ul>
 			</div>
 		</nav>
-		<header>
-			<div class="overlay">
-				<div class="right-block">
-					<h1>Une <strong>urgence</strong> ? Appelez-nous</h1>
+		<header id="header">
+      <div class="slider">
+         <div class="overlay">
+            <div id="slides" class="slide1 header-mobile">
+               <div class="container">
+                  <ul class="callToAction" id="CTA">
+                     <li>
+                        <h1 class="text-center">Une <strong>urgence</strong> ? Appelez-nous</h1>
 					<hr>
 					<h3 class="text-center uppercase">Appuyez pour appeler !</h3>
 					<a class="phone" href="tel:0102030405">
 						<h2><i class="fa fa-phone white" aria-hidden="true"></i> 01 02 03 04 05</h2>
 					</a>
-				</div>
-			</div>
-		</header>
+                     </li>
+                     <li class="inactive">
+                        <h1 class="text-center">Nous sommes disponible<br><span class="red">24h/24 7/7</span></h1>
+					<hr>
+					<h3 class="text-center uppercase">Appuyez pour appeler !</h3>
+					<a class="phone" href="tel:0102030405">
+						<h2><i class="fa fa-phone white" aria-hidden="true"></i> 01 02 03 04 05</h2>
+					</a>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+         <ul id="direction-nav">
+            <li>
+               <div id="previous" class="previous"></div>
+            </li>
+            <li>
+               <div id="next" class="next"></div>
+            </li>
+         </ul>
+         <div class="loader-container">
+            <div id="loader" class="animationLoad"></div>
+         </div>
+      </div>
+   </header>
 		<section id="services">
 			<div class="container">
 				<h2 class="uppercase text-center mb-20">Nos services</h2>
@@ -109,17 +136,14 @@
 				<div class="row">
 					<div class="col-md-4 col-sm-12">
 						<div class="prices">
-						lol
 						</div>
 					</div>
 					<div class="col-md-4 col-sm-12">
 						<div class="prices">
-						
 						</div>
 					</div>
 					<div class="col-md-4 col-sm-12">
 						<div class="prices">
-						
 						</div>
 					</div>
 				</div>

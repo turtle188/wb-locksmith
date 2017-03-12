@@ -245,34 +245,28 @@ hr {
     margin-right: auto;
     margin-left: auto;
 }
-.overlay {
-    background-image: url(http://www.arnoldsplumbingllc.com/img/0292/585.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 700px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: center;
+.inactive {
+	display: none;
 }
-.right-block {
+.callToAction {
 	max-width: 500px;
 	overflow: hidden;
-	border-radius: 10px;
-	background-color: rgba(35, 39, 60, 0.95);
-	color: #ffffff;
-	padding: 25px;
-	position: absolute;
-	right: 100px;
-	box-shadow: 0 0 8px #000;
+    border-radius: 10px;
+    background-color: rgba(35, 39, 60, 0.95);
+    color: #ffffff;
+    padding: 25px;
+    box-shadow: 0 0 8px #000;
+    position: absolute;
+    top: 30%;
+    right: 100px;
 }
-.right-block p {
+.callToAction p {
 	font-size: 16px;
 }
-.right-block h2 {
+.callToAction h2 {
 	font-size: 20px;
 }
-.right-block h3 {
+.callToAction h3 {
 	font-size: 16px;
 }
 .row {
@@ -1019,4 +1013,105 @@ hr {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+}
+
+.slider {
+    height: 550px;
+    overflow: hidden;
+    position: relative;
+}
+ul.slides {
+    height: 100%;
+}
+.loader-container {
+	content: '';
+	height: 5px;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	overflow: hidden;
+	background-color: rgba(0, 0, 0, 0.3);
+}
+#loader {
+	height: 100%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	background-color: rgb(210, 67, 67);
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+.animationLoad {
+    height: 100%;
+	-webkit-animation: timer 8s linear infinite; /* Safari, Opera, Chrome */
+	animation: timer 8s linear infinite;
+}
+header:hover .animationLoad {
+    animation-play-state: paused;
+}
+@keyframes timer {
+	0% {
+		width: 0%;
+	}
+	100% {
+		width: 100%;
+	}
+}
+.overlay {
+    height: 100%;
+}
+.slide1 {
+    background-image: url(../img/header.jpg);
+}
+.slide2 {
+    background-image: url(http://coastlocksmith.com/files/2014/04/dl2.jpg);
+}
+#direction-nav .previous::before,
+#direction-nav .next::before {
+    font-family: fontawesome;
+    font-size: 35px;
+    color: #fff;
+}
+#direction-nav .previous::before {
+    content: "\f104";
+}
+#direction-nav .next::before {
+    content: "\f105";
+}
+.previous,
+.next {
+    display: block;
+    padding: 25px 15px;
+    background: rgba(0, 0, 0, 0.25);
+    position: absolute;
+    top: 45%;
+    z-index: 10;
+    overflow: hidden;
+    cursor: pointer;
+}
+.previous {
+    border-radius: 0px 50px 50px 0px;
+    left: 0px;
+}
+.next {
+    border-radius: 50px 0px 0px 50px;
+    right: 0px;
+}
+.previous:hover,
+.next:hover {
+    background: rgba(0, 0, 0, 0.35);
+}
+@media screen and (min-width: 1024px)
+{
+.overlay .slide1, .overlay .slide2 {
+    background-size: cover;
+    z-index: 0;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    height: 100%;
+	}
 }
