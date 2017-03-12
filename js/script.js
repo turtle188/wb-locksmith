@@ -1,21 +1,30 @@
-var navElem = document.querySelectorAll(".menu li");
-navElem[0].addEventListener("click", function() {
-	toggleNav(navElem, 0);
+var button1 = document.getElementById("button1");
+button1.addEventListener("click", function () {
+	toggleTextServices(button1, 0);
 });
-navElem[1].addEventListener("click", function() {
-	toggleNav(navElem, 1);
+var button2 = document.getElementById("button2");
+button2.addEventListener("click", function () {
+	toggleTextServices(button2, 1);
 });
-navElem[2].addEventListener("click", function() {
-	toggleNav(navElem, 2);
+var button3 = document.getElementById("button3");
+button3.addEventListener("click", function () {
+	toggleTextServices(button3, 2);
 });
-navElem[3].addEventListener("click", function() {
-	toggleNav(navElem, 3);
-});
-navElem[4].addEventListener("click", function() {
-	toggleNav(navElem, 4);
+var button4 = document.getElementById("button4");
+button4.addEventListener("click", function () {
+	toggleTextServices(button4, 3);
 });
 
-function toggleNav(elem, x)
+function toggleTextServices(button, x)
 {
-	elem[x].classList.toggle('active');
+	var textServices = document.querySelectorAll("#services span");
+	textServices[x].classList.toggle("more");
+	if (textServices[x].className == "more")
+	{
+		button.innerText = "Lire plus";
+	}
+	else 
+	{
+		button.innerText = "Réduire";
+	}
 }
